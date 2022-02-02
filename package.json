@@ -1,0 +1,39 @@
+{
+    "name": "amcl",
+    "displayName": "amcl",
+    "description": "Basic support for Honeywell's AM/CL language",
+    "version": "0.2.3",
+    "publisher": "bazdalaz",
+    "galleryBanner": {
+        "color": "#0000FF",
+        "theme": "dark"
+    },
+    "license": "SEE LICENSE file",
+    "bugs": {
+        "url": "https://github.com/mofet-demo/amcl/issues",
+        "email": "p.zdarova@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mofet-demo/amcl.git"
+    },
+    "engines": {
+        "vscode": "^1.47.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "cl",
+            "aliases": ["CL", "cl"],
+            "extensions": [".CL",".LS",".LE",".EC"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "cl",
+            "scopeName": "source.cl",
+            "path": "./syntaxes/cl.tmLanguage.json"
+        }]
+    }
+}
