@@ -2,6 +2,7 @@
     "name": "amcl",
     "displayName": "amcl",
     "description": "Basic support for Honeywell's AM/CL language",
+    "icon": "icon.png",
     "version": "0.2.3",
     "publisher": "bazdalaz",
     "galleryBanner": {
