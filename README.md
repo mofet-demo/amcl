@@ -33,10 +33,6 @@ Bug reports are welcome!
 ## Release Notes
 ### 0.2.3
 
-Adding some snippets
-
-### 0.2.2
-
 Update grammar
 ### 0.1.2
 
