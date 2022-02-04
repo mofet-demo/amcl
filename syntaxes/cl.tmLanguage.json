@@ -2,10 +2,10 @@
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "name": "CL",
   "patterns": [
+    { "include": "#constants" },
     { "include": "#comments" },
     { "include": "#keywords" },
     { "include": "#strings" },
-    { "include": "#constants" },
     { "include": "#meta" },
     { "include": "#vars" },
     { "include": "#punctuation" },
@@ -18,6 +18,34 @@
           "name": "comment.line.double-dash.cl",
           "begin": "--",
           "end": "\n"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "match": "(?<![\\w\\d.])0[xX][0-9A-Fa-f]+(?![pPeE.0-9])",
+          "name": "constant.numeric.integer.hexadecimal.cl"
+        },
+        {
+          "match": "(?<![\\w\\d.])0[xX][0-9A-Fa-f]+(\\.[0-9A-Fa-f]+)?([eE]-?\\d*)?([pP][-+]\\d+)?",
+          "name": "constant.numeric.float.hexadecimal.cl"
+        },
+        {
+            "match": "(?<![\\w\\d])\\d+\\b",
+            "name": "constant.numeric.integer.cl"
+          },
+        {
+          "name": "constant.language.cl",
+          "match": "(?i)\\b(full|inhibit|enable|program|man|auto|cas|stop|start|open|close|run|on|off|reset|high|low|normal|reststrt|reset|in\\s|out)\\b"
+        },
+        {
+          "name": "constant.time.cl",
+          "match": "(?i)\\b(hour|second|minute|hours|mins|secs)\\b"
+        },
+        {
+          "match": "^[A-Z0-9]{1,3}:",
+          "name": "entity.name.label.cl"
         }
       ]
     },
@@ -48,8 +76,8 @@
           "name": "keyword.operator.arithmetic.cl"
         },
         {
-            "name": "keyword.other.cl",
-            "match": "(?i)\\b(badval|parameter|value|eu|access|engineer|exists|class|backgrnd|abnormal)\\b"
+          "name": "keyword.other.cl",
+          "match": "(?i)\\b(badval|parameter|value|eu|access|engineer|exists|class|backgrnd|abnormal)\\b"
         }
       ]
     },
@@ -68,36 +96,36 @@
     "vars": {
       "patterns": [
         {
-          "begin": "\\b([D][A-Z0-9_]{2,12}\\b)\\.?\\w{,12}",
+          "begin": "\\b([UMJVOWYGSHDQARQ][A-Z0-9_]{2,12})\\.?([A-Z]{,12})\\b",
           "beginCaptures": {
-            "0": {
-              "name": "variable.other.cl"
-            },
             "1": {
+              "name": "variable.other.io.cl"
+            },
+            "2": {
+              "name": "variable.parameter.io.cl"
+            }
+          },
+          "end": "(\\s|\\S|\\n)"
+        },
+        {
+          "begin": "(?i)(\\$ntwrk\\d{2}|\\!box|\\$nm\\d{2}[bn]\\d{2})\\b\\.?(\\w{,12})",
+          "beginCaptures": {
+            "1": {
+              "name": "variable.language.cl"
+            },
+            "2": {
               "name": "variable.parameter.cl"
             }
           },
           "end": "(\\s|\\S|\\n)"
         },
         {
-          "begin": "(?i)(\\$ntwrk\\d{2}|\\!box|\\$nm\\d{2}[bn]\\d{2})\\b\\.?\\w{,12}",
+          "begin": "\\b([\\d{2,3}][A-Z0-9_]{2,8})\\b\\.?(\\w{,8})?",
           "beginCaptures": {
-            "0": {
-              "name": "variable.other.cl"
-            },
             "1": {
-              "name": "variable.parameter.cl"
-            }
-          },
-          "end": "(\\s|\\S|\\n)"
-        },
-        {
-          "begin": "(?i)\\b(\\d{2,3}[A-Z0-9_]{3,8})\\b\\.?\\w{,12}",
-          "beginCaptures": {
-            "0": {
-              "name": "variable.other.cl"
+              "name": "variable.language.cl"
             },
-            "1": {
+            "2": {
               "name": "variable.parameter.cl"
             }
           },
@@ -105,48 +133,17 @@
         }
       ]
     },
-    "constants": {
-      "patterns": [
-        {
-          "match": "(?<![\\w\\d.])0[xX][0-9A-Fa-f]+(?![pPeE.0-9])",
-          "name": "constant.numeric.integer.hexadecimal.cl"
-        },
-        {
-          "match": "(?<![\\w\\d.])0[xX][0-9A-Fa-f]+(\\.[0-9A-Fa-f]+)?([eE]-?\\d*)?([pP][-+]\\d+)?",
-          "name": "constant.numeric.float.hexadecimal.cl"
-        },
-        {
-          "match": "(?<![\\w\\d])\\d+(?![pPeE.0-9])\\b",
-          "name": "constant.numeric.integer.cl"
-        },
-        {
-          "match": "(?<![\\w\\d])\\d+(\\.\\d+)?([eE]-?\\d*)?",
-          "name": "constant.numeric.float.cl"
-        },
-        {
-          "name": "constant.language.cl",
-          "match": "(?i)\\b(full|inhibit|enable|program|man|auto|cas|stop|start|open|close|run|on|off|reset|high|low|normal|reststrt|reset|in\\s|out)\\b"
-        },
-        {
-          "name": "constant.time.cl",
-          "match": "(?i)\\b(hour|second|minute|hours|mins|secs)\\b"
-        },
-        {
-            "match": "^[A-Z0-9]{1,3}:",
-            "name": "entity.name.label.cl"
-        }
-      ]
-    },
+
     "meta": {
       "patterns": [
         {
-          "begin": "(?i)\\b(block|restart|phase|step|ho?ld\\d{,2}|shutdown|shdn\\d{,2}|subroutine|call|end|sequence|point)\\b\\s?\\w*",
-          "beginCaptures": {
+          "begin": "(?i)\\b(hold handler|block|restart|phase|step|ho?ld\\d{,2}|shutdown|shdn\\d{,2}|subroutine|call|end|sequence|point)\\b\\s?\\w*",
+          "captures": {
             "0": {
-              "name": "entity.name.function.cl"
+              "name": "meta.entity.name.cl"
             },
             "1": {
-              "name": "variable.function.cl"
+              "name": "meta.entity.function.cl"
             }
           },
 
@@ -157,7 +154,6 @@
           "name": "support.function.library.cl"
         }
       ]
-
     },
 
     "punctuation": {
@@ -179,7 +175,7 @@
           "match": "(?i)\\b(local|external|general|generic)\\b"
         },
         {
-          "name": "variable.other.cl",
+          "name": "variable.parameter.cl",
           "match": "(?i)\\b(flg|nn|fl|(str\\d{2}))\\b"
         }
       ]
