@@ -1,0 +1,35 @@
+{
+    "Date": {
+		"prefix": "da",
+		"body": [
+			"$CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR"
+		],
+		"description": "Insert curent date"
+	},
+    "SEND(WAIT)": {
+		"prefix": "SW",
+		"body": [
+			"SEND(WAIT):\"$1\""
+		],
+		"description": "SEND(WAIT)"
+	},
+	"CLOSE XV": {
+		"prefix": "CL",
+		"body": [
+			"SET $1.MODATTR=PROGRAM",
+			"CLOSE $1",
+			"$2"
+		],
+		"description": "CLOSE XV"
+	},
+	"OPEN XV": {
+		"prefix": "OP",
+		"body": [
+			"SET $1.MODATTR=PROGRAM",
+			"OPEN $1",
+			"$2"
+		],
+		"description": "OPEN XV"
+	}
+
+}

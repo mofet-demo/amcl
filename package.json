@@ -31,10 +31,23 @@
             "extensions": [".CL",".LS",".LE",".EC"],
             "configuration": "./language-configuration.json"
         }],
-        "grammars": [{
+        "grammars": [
+            {
             "language": "cl",
             "scopeName": "source.cl",
             "path": "./syntaxes/cl.tmLanguage.json"
-        }]
+        },
+        {
+            "path": "./syntaxes/injection.json",
+            "scopeName": "todo-comment.injection",
+            "injectTo": ["source.cl"]
+          }
+    ],
+        "snippets": [
+            {
+                "language": "cl",
+                "path": "./snippets/snippets.json"
+            }
+        ]
     }
 }

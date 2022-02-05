@@ -1,0 +1,39 @@
+{
+  "scopeName": "todo-comment.injection",
+  "injectionSelector": "L:comment.line.double-dash",
+  "patterns": [
+    { "include": "#todo-keyword" },
+    { "include": "#mod_params" },
+    { "include": "#box-params" },
+    { "include": "#const" },
+    { "include": "#review" },
+    { "include": "#fixme" }
+  ],
+
+  "repository": {
+    "todo-keyword": {
+      "match": "(?i)TODO.*$",
+      "name": "markup.bold.cl"
+    },
+    "mod_params": {
+      "match": "(?i)mod (numerics|flags|time*?|strings?).*$",
+      "name": "constant.character.escape.cl"
+    },
+    "box-params": {
+      "match": "(?i)box (numeric*?|flags|time*?|strings?).*$",
+      "name": "constant.character.escape.cl"
+    },
+    "const": {
+      "match": "(?i)const.*$",
+      "name": "constant.character.escape.cl"
+    },
+    "review": {
+      "match": "(?i)review.*$",
+      "name": "markup.bold.cl"
+    },
+    "fixme": {
+      "match": "(?i)fixme.*$",
+      "name": "markup.bold.cl"
+    }
+  }
+}
