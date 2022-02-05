@@ -10,6 +10,7 @@ Working Effectively with Legacy Code.
 - Bracket autoclosing
 - Bracket autosurrounding
 - Comment toggling
+- Injection highlighting for TODO, FIXME & REVIEW in comments
 
 > We're working on Programmatic Language Features
 > powered by a Language Server, like
