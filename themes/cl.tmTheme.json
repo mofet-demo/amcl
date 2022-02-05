@@ -1,0 +1,15 @@
+{
+  "name": "cl",
+  "type": "dark",
+  "semanticHighlighting": true,
+  "semanticTokenColors": {
+    "tokenColors": [
+      {
+        "scope": "entity.tag.data_point.cl",
+        "settings": {
+          "style": "bold"
+        }
+      }
+    ]
+  }
+}

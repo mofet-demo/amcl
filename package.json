@@ -64,6 +64,13 @@
             "injectTo": ["source.cl"]
           }
     ],
+    "themes": [
+        {
+            "label": "[AMCL] Dark Theme",
+            "uiTheme": "vs-dark",
+            "path": "./themes/cl.tmTheme.json"
+        }
+    ],
         "snippets": [
             {
                 "language": "cl",

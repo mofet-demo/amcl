@@ -117,7 +117,7 @@
           "begin": "\\b([UMJVOWYGSHDQRA][A-Z0-9_]{2,12})\\.?([A-Z]{,12})\\b",
           "beginCaptures": {
             "1": {
-              "name": "entity.name.tag.data_point.cl"
+              "name": "entity.tag.data_point.cl"
             },
             "2": {
               "name": "variable.parameter.cl"
