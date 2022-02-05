@@ -25,6 +25,27 @@
         "Programming Languages"
     ],
     "contributes": {
+        "configuration": {
+        "type": "object",
+        "title": "AMCL",
+        "properties": {
+            "amcl.enableColorDataPoints": {
+                "type": "boolean",
+                "default": true,
+                "description": "Enable highlighting for Data Points Tags"
+            }
+          },
+          "configurationDefaults": {
+			"[amcl]": {
+				"editor.quickSuggestions": true,
+				"editor.tabSize": 4,
+				"editor.insertSpaces": false,
+				"editor.detectIndentation": true,
+				"editor.trimAutoWhitespace": true,
+				"editor.autoClosingBrackets": true
+            }
+        }
+    },
         "languages": [{
             "id": "cl",
             "aliases": ["CL", "cl"],
