@@ -1,81 +1,105 @@
 {
-    "name": "amcl",
-    "displayName": "amcl",
-    "description": "Basic support for Honeywell's AM/CL language",
-    "icon": "icon.png",
-    "version": "0.2.3",
-    "publisher": "bazdalaz",
-    "galleryBanner": {
-        "color": "#0000FF",
-        "theme": "dark"
-    },
-    "license": "SEE LICENSE file",
-    "bugs": {
-        "url": "https://github.com/mofet-demo/amcl/issues",
-        "email": "p.zdarova@gmail.com"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/mofet-demo/amcl.git"
-    },
-    "engines": {
-        "vscode": "^1.47.0"
-    },
-    "categories": [
-        "Programming Languages"
-    ],
-    "contributes": {
-        "configuration": {
-        "type": "object",
-        "title": "AMCL",
-        "properties": {
-            "amcl.enableColorDataPoints": {
-                "type": "boolean",
-                "default": true,
-                "description": "Enable highlighting for Data Points Tags"
-            }
-          },
-          "configurationDefaults": {
-			"[amcl]": {
-				"editor.quickSuggestions": true,
-				"editor.tabSize": 4,
-				"editor.insertSpaces": false,
-				"editor.detectIndentation": true,
-				"editor.trimAutoWhitespace": true,
-				"editor.autoClosingBrackets": true
-            }
+  "name": "amcl",
+  "displayName": "amcl",
+  "description": "Basic support for Honeywell's AM/CL language",
+  "icon": "icon.png",
+  "version": "0.2.4",
+  "publisher": "bazdalaz",
+  "author": {
+    "email": "bazdalaz@gmail.com",
+    "name": "Leonid"
+  },
+  "galleryBanner": {
+    "color": "#0000FF",
+    "theme": "dark"
+  },
+  "license": "SEE LICENSE file",
+  "bugs": {
+    "url": "https://github.com/mofet-demo/amcl/issues",
+    "email": "p.zdarova@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mofet-demo/amcl.git"
+  },
+  "engines": {
+    "vscode": "^1.47.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Themes"
+  ],
+  "keywords": [
+    "AM",
+    "CL",
+    "Application moduele",
+    "Control Language"
+  ],
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "AMCL",
+      "properties": {
+        "amcl.enableColorDataPoints": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable highlighting for Data Points Tags"
         }
-    },
-        "languages": [{
-            "id": "cl",
-            "aliases": ["CL", "cl"],
-            "extensions": [".CL",".LS",".LE",".EC"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [
-            {
-            "language": "cl",
-            "scopeName": "source.cl",
-            "path": "./syntaxes/cl.tmLanguage.json"
-        },
-        {
-            "path": "./syntaxes/injection.json",
-            "scopeName": "todo-comment.injection",
-            "injectTo": ["source.cl"]
-          }
-    ],
-    "themes": [
-        {
-            "label": "[AMCL] Dark Theme",
-            "uiTheme": "vs-dark",
-            "path": "./themes/cl.tmTheme.json"
+      },
+      "configurationDefaults": {
+        "[amcl]": {
+          "editor.quickSuggestions": true,
+          "editor.tabSize": 4,
+          "editor.insertSpaces": false,
+          "editor.detectIndentation": true,
+          "editor.trimAutoWhitespace": true,
+          "editor.autoClosingBrackets": true
         }
+      }
+    },
+    "languages": [
+      {
+        "id": "cl",
+        "aliases": [
+          "CL",
+          "cl"
+        ],
+        "extensions": [
+          ".CL",
+          ".LS",
+          ".LE",
+          ".EC"
+        ],
+        "configuration": "./language-configuration.json"
+      }
     ],
-        "snippets": [
-            {
-                "language": "cl",
-                "path": "./snippets/snippets.json"
-            }
+    "grammars": [
+      {
+        "language": "cl",
+        "scopeName": "source.cl",
+        "path": "./syntaxes/cl.tmLanguage.json"
+      },
+      {
+        "path": "./syntaxes/injection.json",
+        "scopeName": "todo-comment.injection",
+        "injectTo": [
+          "source.cl"
         ]
-    }
+      }
+    ],
+    "snippets": [
+      {
+        "language": "cl",
+        "path": "./snippets/snippets.json"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "editor.printFunctions",
+        "key": "ctrl+Enter cntr+Enter",
+        "mac": "ctrl+Enter cntr+Enter",
+        "when": "editor.editorTextFocus"
+      }
+    ]
+  }
 }

@@ -130,6 +130,7 @@
             "beginCaptures": {
               "1": {
                 "name": "variable.language.cl"
+
               },
               "2": {
                 "name": "variable.parameter.cl"

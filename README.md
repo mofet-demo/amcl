@@ -32,7 +32,7 @@ Nothing special..
 Bug reports are welcome!
 
 ## Release Notes
-### 0.2.3
+### 0.2.4
 
 Update grammar
 ### 0.1.2
