@@ -53,7 +53,18 @@
           "editor.insertSpaces": false,
           "editor.detectIndentation": true,
           "editor.trimAutoWhitespace": true,
-          "editor.autoClosingBrackets": true
+          "editor.autoClosingBrackets": true,
+          "editor.tokenColorCustomizations": {
+            "textMateRules": [
+              {
+                "scope": "entity",
+                "name": "data_point",
+                "settings": {
+                  "fontStyle": "italic"
+                }
+              }
+            ]
+          }
         }
       }
     },
