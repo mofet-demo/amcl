@@ -57,8 +57,7 @@
           "editor.tokenColorCustomizations": {
             "textMateRules": [
               {
-                "scope": "entity",
-                "name": "data_point",
+                "scope": "source.cl entity.data_point",
                 "settings": {
                   "fontStyle": "italic"
                 }
