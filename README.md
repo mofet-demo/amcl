@@ -32,6 +32,9 @@ Nothing special..
 Bug reports are welcome!
 
 ## Release Notes
+### 0.2.5
+
+Update default settings
 ### 0.2.4
 
 Update grammar

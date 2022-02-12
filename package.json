@@ -3,7 +3,7 @@
   "displayName": "amcl",
   "description": "Basic support for Honeywell's AM/CL language",
   "icon": "icon.png",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "publisher": "bazdalaz",
   "author": {
     "email": "bazdalaz@gmail.com",
@@ -36,6 +36,24 @@
     "Control Language"
   ],
   "contributes": {
+	  "configurationDefaults": {
+		  "editor.quickSuggestions": true,
+		  "editor.tabSize": 4,
+		  "editor.insertSpaces": false,
+		  "editor.detectIndentation": true,
+		  "editor.trimAutoWhitespace": true,
+		  "editor.autoClosingBrackets": "always",
+		  "editor.tokenColorCustomizations": {
+			"textMateRules": [
+			  {
+				"scope": "entity.data_point",
+				"settings": {
+				  "fontStyle": "italic"
+				}
+			  }
+			]
+		  }
+	  },
     "configuration": {
       "type": "object",
       "title": "AMCL",
@@ -44,26 +62,6 @@
           "type": "boolean",
           "default": true,
           "description": "Enable highlighting for Data Points Tags"
-        }
-      },
-      "configurationDefaults": {
-        "[amcl]": {
-          "editor.quickSuggestions": true,
-          "editor.tabSize": 4,
-          "editor.insertSpaces": false,
-          "editor.detectIndentation": true,
-          "editor.trimAutoWhitespace": true,
-          "editor.autoClosingBrackets": true,
-          "editor.tokenColorCustomizations": {
-            "textMateRules": [
-              {
-                "scope": "source.cl entity.data_point",
-                "settings": {
-                  "fontStyle": "italic"
-                }
-              }
-            ]
-          }
         }
       }
     },
